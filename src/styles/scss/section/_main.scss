@@ -1,0 +1,76 @@
+@use "../custom" as *;
+@use "../component/mixins" as *;
+
+.navbar {
+  background-color: $black;
+  padding: 12px 0;
+
+  .nav-brand {
+    width: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.qr-container {
+  width: 50%;
+  display: flex;
+  justify-items: center;
+  margin-bottom: 1rem;
+
+  @include responsive(mobile) {
+    width: 100%;
+  }
+
+  canvas {
+    width: 20vw !important;
+    height: 20vw !important;
+    margin: 0 auto;
+
+    @include responsive(mobile) {
+      width: 50vw !important;
+      height: 50vw !important;
+    }
+  }
+}
+
+.info {
+  max-width: 100%;
+  width: 50%;
+
+  @include responsive(mobile) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .form-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  .credit {
+    font-size: var(--fs-400);
+    font-weight: 500;
+
+    span {
+      font-size: var(--fs-600);
+    }
+
+    .footer-credit {
+      color: $primary;
+
+      &:hover {
+        transition: all 1s;
+        color: $secondary;
+      }
+    }
+  }
+}
